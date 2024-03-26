@@ -1,7 +1,7 @@
 @extends('front.master')
 
 @section('title')
-    Luckee 7 - Online Lotto & Lottery
+     Online Lottery
 @endsection
 
 @section('body')

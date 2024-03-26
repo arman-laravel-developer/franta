@@ -342,9 +342,39 @@
                     </div>
                 </li>
                 <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#sidebarBlog" aria-expanded="false" aria-controls="sidebarEmail"
+                       class="side-nav-link">
+                        <i class="uil-bag"></i>
+                        <span> Blog Module </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarBlog">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{route('blog.add')}}">Add Contest</a>
+                            </li>
+                            <li>
+                                <a href="{{route('blog.manage')}}">Manage Contest</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="side-nav-item">
                     <a href="{{route('customer.manage')}}" class="side-nav-link">
                         <i class="uil-users-alt"></i>
                         <span> General user manage </span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="{{route('about.add')}}" class="side-nav-link">
+                        <i class="uil-umbrella"></i>
+                        <span> About Us </span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="{{route('cantact.add')}}" class="side-nav-link">
+                        <i class="uil-umbrella"></i>
+                        <span> Cantact </span>
                     </a>
                 </li>
                 <li class="side-nav-item">
@@ -386,7 +416,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <script>document.write(new Date().getFullYear())</script> © Arman
+                        <script>document.write(new Date().getFullYear())</script> © Franta
                     </div>
                 </div>
             </div>

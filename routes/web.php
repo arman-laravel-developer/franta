@@ -15,6 +15,9 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactUs;
+use App\Http\Controllers\BlogController;
 
 use App\Models\RoleRoute;
 
@@ -131,6 +134,28 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
                 Route::get('/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
                 Route::post('/update/{id}', [CategoryController::class, 'update'])->name('category.update');
                 Route::post('/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
+            });
+
+            Route::prefix('aboutus')->group(function () {
+                Route::get('/add', [AboutController::class, 'index'])->name('about.add');
+                Route::post('/new', [AboutController::class, 'create'])->name('about.new');
+                Route::post('/update/{id}', [AboutController::class, 'update'])->name('about.update');
+            });
+            Route::prefix('contact')->group(function () {
+                Route::get('/add', [ContactUs::class, 'index'])->name('cantact.add');
+                Route::post('/new', [ContactUs::class, 'create'])->name('cantact.new');
+                Route::get('/manage', [ContactUs::class, 'manage'])->name('cantact.manage');
+                Route::get('/edit/{id}', [ContactUs::class, 'edit'])->name('cantact.edit');
+                Route::post('/update/{id}', [ContactUs::class, 'update'])->name('cantact.update');
+                Route::post('/delete/{id}', [ContactUs::class, 'delete'])->name('cantact.delete');
+            });
+            Route::prefix('Blog')->group(function () {
+                Route::get('/add', [BlogController::class, 'index'])->name('blog.add');
+                Route::post('/new', [BlogController::class, 'create'])->name('blog.new');
+                Route::get('/manage', [BlogController::class, 'manage'])->name('blog.manage');
+                Route::get('/edit/{id}/{slug}', [BlogController::class, 'edit'])->name('blog.edit');
+                Route::post('/update/{id}', [BlogController::class, 'update'])->name('blog.update');
+                Route::post('/delete/{id}', [BlogController::class, 'delete'])->name('blog.delete');
             });
             Route::prefix('orders')->group(function () {
                 Route::get('/pending', [OrderController::class, 'index'])->name('order.pending');
