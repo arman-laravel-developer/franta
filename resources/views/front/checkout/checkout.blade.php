@@ -32,18 +32,6 @@
                         <div class="row">
                             <div class="col-lg-7">
                                 <div class="checkout-form-area">
-{{--                                    <div class="top">--}}
-{{--                                        <div class="left">--}}
-{{--                                            <h3 class="mb-2">Already a Rifa Member?</h3>--}}
-{{--                                            <p>Sign in to buy lottery more easier!</p>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="right">--}}
-{{--                                            <a href="#0">--}}
-{{--                                                <i class="las la-user"></i>--}}
-{{--                                                <span>Sign in</span>--}}
-{{--                                            </a>--}}
-{{--                                        </div>--}}
-{{--                                    </div><!-- top end -->--}}
                                     <div class="personal-details mt-30">
                                         <h3 class="title">Share your Contact  Details </h3>
                                         <form class="personal-details-form" action="{{route('new.order')}}" method="POST" enctype="multipart/form-data">

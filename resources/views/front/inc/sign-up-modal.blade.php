@@ -22,21 +22,40 @@
                                     <label for="id-1">Remember Password</label>
                                     <span class="checkbox"></span>
                                 </div>
-                                <a href="#0" class="link">Forgot Password?</a>
+                                <a href="#0" class="link" data-bs-toggle="modal" data-bs-target="#forgetModal">Forgot Password?</a>
                             </div>
                             <div class="form-group text-center mt-5">
                                 <button class="cmn-btn">log in</button>
                             </div>
                         </form>
-                        <p class="text-center mt-4">Don't have an account? <a href="#0" data-bs-toggle="modal" data-bs-target="#signupModal"> Sign Up Now</a></p>
-                        <div class="divider">
-                            <span>or</span>
-                        </div>
-                        <ul class="social-link-list">
-                            <li><a href="#0"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#0"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#0"><i class="fab fa-google-plus-g"></i></a></li>
-                        </ul>
+                        <p class="text-center mt-4">Don't have an account?
+                            <a href="#0" data-bs-toggle="modal" data-bs-target="#signupModal"> Sign Up Now</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="forgetModal" tabindex="1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="account-form-area">
+                    <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="las la-times"></i></button>
+                    <h3 class="title">Reset Password</h3>
+                    <div class="account-form-wrapper">
+                        <form action="{{route('password.email')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group">
+                                <label>Email <sup>*</sup></label>
+                                <input type="email" name="email" placeholder="Enter your Email">
+                            </div>
+                            <div class="form-group text-center mt-5">
+                                <button class="cmn-btn">Reset Link</button>
+                            </div>
+                        </form>
+                        <p class="text-center mt-4">If remember password?
+                            <a href="#0" data-bs-toggle="modal" data-bs-target="#loginModal"> Log in</a></p>
                     </div>
                 </div>
             </div>
@@ -88,14 +107,6 @@
                             </div>
                         </form>
                         <p class="text-center mt-4"> Already have an account? <a href="#0" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></p>
-                        <div class="divider">
-                            <span>or</span>
-                        </div>
-                        <ul class="social-link-list">
-                            <li><a href="#0"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#0"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#0"><i class="fab fa-google-plus-g"></i></a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
