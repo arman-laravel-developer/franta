@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('mobile')->nullable();
             $table->string('code')->nullable();
+            $table->string('remember_token')->nullable();
             $table->text('verifed_at')->nullable();
             $table->time('verify_time')->nullable();
             $table->string('email')->nullable();

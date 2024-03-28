@@ -18,6 +18,7 @@ use App\Http\Controllers\TicketController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactUs;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ForgotPasswordController;
 
 use App\Models\RoleRoute;
 
@@ -81,6 +82,10 @@ Route::middleware(['user.auth.logout'])->group(function (){
     Route::post('/update-personal-info', [UserDashboardController::class, 'update'])->name('update.personal');
     Route::post('/update-password-info', [UserDashboardController::class, 'updatePass'])->name('user.password');
 });
+
+Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('/password-reset/{token}', [ForgotPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ForgotPasswordController::class, 'reset'])->name('password.update');
 
 
 Route::post('/check-email-unique', [UserAuthController::class,'checkEmailUnique'])->name('checkEmailUnique');

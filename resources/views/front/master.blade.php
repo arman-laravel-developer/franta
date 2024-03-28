@@ -266,5 +266,7 @@
 <script src="{{asset('/')}}front/assets/js/app.js"></script>
 @include('sweetalert::alert')
 
+@include('flash-toastr::message')
+
 </body>
 </html>
